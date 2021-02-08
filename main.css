@@ -1,0 +1,87 @@
+/****************************************
+GENERAL SETUP, VARIABLES, ETC.
+****************************************/
+
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: 'DM Sans', sans-serif;}
+
+:root {
+    --primary-color: #353536;
+    --secondary-color: #8e92a4;
+    --background-color:  #f5f8ff;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-size: 15px;
+}
+
+.container {
+    display: flex;
+}
+
+/****************************************
+LEFT-BAR
+****************************************/
+
+.left-bar {
+    min-width: 290px;
+    height: 100vh;
+    padding-top: 60px;
+    padding-left: 45px;
+    position: relative;
+    border-right: 1px solid #e3e7f7;
+    background-color: var(--background-color);
+}
+
+.left-bar h2 {
+    padding-top: 30px;
+}
+
+.left-bar ul {
+    list-style-type: none;
+    padding: 12px 0;
+    margin: 0;
+}
+
+.left-bar li {
+    color: var(--secondary-color);
+    padding: 6px;
+    cursor: pointer;
+}
+
+.left-bar i {
+    padding: 0px 10px;
+}
+
+.left-bar .selected-item {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/****************************************
+MAIN CONTENT
+****************************************/
+
+.main-content {
+    border: solid red 1px;
+    width: 640px;
+    height: 100vh;
+
+
+
+    /* STOPEED HERE. MAKING IT SO THE LEFT AND RIGHT BAR WIDTHS REMAIN FIXED, BUT THE PAGE CONTENT WILL SHRINK UNTIL THE PAGE HITS A MEDIA QUERRIE, THEN THINGS WILL WRAP .... */
+    flex-grow: 1;
+    position: relative;
+}
+
+
+
+/****************************************
+RIGHT-BAR
+****************************************/
+
+.right-bar {
+    border: solid pink 1px;
+    min-width: 330px;
+}
