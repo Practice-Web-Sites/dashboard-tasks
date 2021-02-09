@@ -19,7 +19,8 @@ body {
     --primary-color: #353536;
     --secondary-color: #8e92a4;
     --background-color: #f5f8ff;
-    --checked-color: #777982;
+    --task-color: #777982;
+    --task-checked-color: #009e90;
 }
 
 /****************************************
@@ -80,15 +81,77 @@ MAIN CONTENT
     border-bottom: 1px solid var(--secondary-color);
 }
 
-.task-item{
+.flex-row {
     display: flex;
     justify-content: space-between;
 }
 
-/********** CUSTOM CHECKBOXES **********/
+/********** CUSTOM CHECKBOX **********/
 
+/* prep the container */
+.checkbox-div {
+    position: relative;
+    display: block;
+    height: 0;
+    width: 0;
+    cursor: pointer;
+    user-select: none;
+}
 
+/* hide the default checkbox */
+.checkbox-div input {
+    position: absolute;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    opacity: 0;
+}
 
+/* create an empty custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    border-radius: 2px;
+    border: solid 1px var(--task-color);
+}
+
+/* change background color when checked */
+.checkbox-div input:checked ~ .checkmark {
+    background-color: var(--task-checked-color);
+    border: none;
+}
+
+/********** CUSTOM CHECKMARK **********/
+
+/* create checkmark area (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-div input:checked ~ .checkmark {
+    display: block;
+}
+
+/* create and style checkmark lines */
+.checkbox-div .checkmark:after {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    width: 10px;
+    height: 5px;
+    left: 9px;
+    right: 5px;
+    transform: rotate(45deg);
+}
+
+/* STUCK WITH THE CHECKBOX CUSTOMIZATION. NEED TO COME TO THIS ANOTHER TIME ....
+https://codepen.io/bobaloushqee/pen/zYoBxJe?editors=1100
+https://stackoverflow.com/questions/4148499/how-to-style-a-checkbox-using-css
+http://jsfiddle.net/maxshuty/qxakwcy3/ */
 
 
 
