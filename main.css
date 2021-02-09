@@ -1,14 +1,8 @@
 /****************************************
-GENERAL SETUP, VARIABLES, ETC.
+RESETS, SETUP, ETC.
 ****************************************/
 
 *{margin: 0; padding: 0; box-sizing: border-box; font-family: 'DM Sans', sans-serif;}
-
-:root {
-    --primary-color: #353536;
-    --secondary-color: #8e92a4;
-    --background-color:  #f5f8ff;
-}
 
 body {
     width: 100%;
@@ -20,6 +14,14 @@ body {
     display: flex;
 }
 
+/********** COLORS ***********/
+:root {
+    --primary-color: #353536;
+    --secondary-color: #8e92a4;
+    --background-color: #f5f8ff;
+    --checked-color: #777982;
+}
+
 /****************************************
 LEFT-BAR
 ****************************************/
@@ -27,14 +29,14 @@ LEFT-BAR
 .left-bar {
     min-width: 290px;
     height: 100vh;
-    padding-top: 60px;
-    padding-left: 45px;
+    padding-top: 120px;
+    padding-left: 30px;
     position: relative;
     border-right: 1px solid #e3e7f7;
     background-color: var(--background-color);
 }
 
-.left-bar h2 {
+.left-bar h3 {
     padding-top: 30px;
 }
 
@@ -64,16 +66,44 @@ MAIN CONTENT
 ****************************************/
 
 .main-content {
-    border: solid red 1px;
     width: 640px;
     height: 100vh;
-
-
-
-    /* STOPEED HERE. MAKING IT SO THE LEFT AND RIGHT BAR WIDTHS REMAIN FIXED, BUT THE PAGE CONTENT WILL SHRINK UNTIL THE PAGE HITS A MEDIA QUERRIE, THEN THINGS WILL WRAP .... */
-    flex-grow: 1;
-    position: relative;
+    padding: 60px 60px;
+    flex-grow: 1; /* allow center div to stretch while left and right bar widths remain stretched */
+    overflow: scroll; /* allow content to scroll, while view remains fullpage */
 }
+
+.main-content h1 {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.task-item{
+    display: flex;
+    justify-content: space-between;
+}
+
+/********** CUSTOM CHECKBOXES **********/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
